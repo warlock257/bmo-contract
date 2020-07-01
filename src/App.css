@@ -1,38 +1,39 @@
+body {
+  background-color: lightgray;
+}
+
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  height: 30px;
+  width: 200px;
+  border-radius: 4px;
+  padding-left: 10px;
+}
+button {
+  height: 36px;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+.filterInput {
+  width: 270px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.restaurantCards {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardContainer {
+  background-color: white;
+  width: 40%;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 3px 3px 9px 0px rgba(0,0,0,0.25);
 }
