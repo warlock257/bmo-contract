@@ -7,13 +7,13 @@ export default function Card(props) {
     for (let i = 0; i < price; i++){
         dollarSigns.push("$")
     }
-    const priceMap = dollarSigns.map((item) => <span>{item}</span>)
+    const priceMap = dollarSigns.map((item, index) => <span key={index}>{item}</span>)
 
     return (
-        <div className="cardContainer">
+        <section className="cardContainer">
             <p><strong> Name: </strong>{name}</p>
             <p><strong> Address: </strong>{address}</p>
             <p><strong> Price: </strong>{priceMap}</p>
-        </div>
+        </section>
     )
 }

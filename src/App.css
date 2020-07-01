@@ -1,7 +1,6 @@
 body {
   background-color: lightgray;
 }
-
 .App {
   text-align: center;
   padding: 20px;
@@ -21,7 +20,15 @@ button {
 .filterInput {
   width: 270px;
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+.priceDropdown {
+  height: 36px;
+  width: 180px;
+  margin-left: 10px;
   margin-bottom: 20px;
+  border-radius: 4px;
+  padding-left: 20px;
 }
 
 .restaurantCards {
@@ -29,7 +36,6 @@ button {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-
 .cardContainer {
   background-color: white;
   width: 40%;

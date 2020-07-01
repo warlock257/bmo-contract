@@ -7,7 +7,8 @@ import Header from "./components/Header";
 import { getRestaurantsAction } from "./redux/restaurantsReducer";
 
 function App() {
-  const [filter, setFilter] = useState("");
+  const [nameFilter, setNameFilter] = useState("");
+  const [priceFilter, setPriceFilter] = useState("all");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,7 +30,14 @@ function App() {
   const restaurantMap = restaurants
     .filter((rest) => {
       let searchString = rest.name.toLowerCase();
-      return searchString.indexOf(filter.toLowerCase()) !== -1;
+      return searchString.indexOf(nameFilter.toLowerCase()) !== -1;
+    })
+    .filter((rest) => {
+      if (priceFilter !== 'all'){
+        return rest.price === Number(priceFilter)
+      } else {
+        return rest
+      }
     })
     .map((rest) => {
       return (
@@ -49,9 +57,23 @@ function App() {
         type="text"
         className="filterInput"
         placeholder="Filter by restaurant name"
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
+        value={nameFilter}
+        onChange={(e) => setNameFilter(e.target.value)}
       />
+      <br />
+      <label htmlFor="price">Filter by price</label>
+      <select
+        name="price"
+        className="priceDropdown"
+        value={priceFilter}
+        onChange={(e) => setPriceFilter(e.target.value)}
+      >
+        <option value="1">$</option>
+        <option value="2">$$</option>
+        <option value="3">$$$</option>
+        <option value="4">$$$$</option>
+        <option value="all">Show All</option>
+      </select>
 
       <main className="restaurantCards">{restaurantMap}</main>
     </div>
